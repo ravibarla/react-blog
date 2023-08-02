@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-blog.git/static/css/main.2f6678a0.css",
-    "main.js": "/react-blog.git/static/js/main.3ed04acb.js",
-    "index.html": "/react-blog.git/index.html",
-    "main.2f6678a0.css.map": "/react-blog.git/static/css/main.2f6678a0.css.map",
-    "main.3ed04acb.js.map": "/react-blog.git/static/js/main.3ed04acb.js.map"
+    "main.css": "/react-blog/static/css/main.2f6678a0.css",
+    "main.js": "/react-blog/static/js/main.3ed04acb.js",
+    "index.html": "/react-blog/index.html",
+    "main.2f6678a0.css.map": "/react-blog/static/css/main.2f6678a0.css.map",
+    "main.3ed04acb.js.map": "/react-blog/static/js/main.3ed04acb.js.map"
   },
   "entrypoints": [
     "static/css/main.2f6678a0.css",
