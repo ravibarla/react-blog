@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useNavigate, Route, Routes, Navigate } from "react-router-dom";
-// import { useToasts } from 'react-toast-notifications';
+import { useNavigate, Navigate } from "react-router-dom";
+
 import { toast } from "react-toastify";
 import { useAuth } from "../hooks";
 import styles from "../styles/login.module.css";
@@ -11,7 +11,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [signingUp, setSigningUp] = useState("");
-  // const { addToast } = useToasts();
+
   const auth = useAuth();
   const history = useNavigate();
 
@@ -28,17 +28,8 @@ const Signup = () => {
         // pauseOnHover: true, // Pause the toast timer on hover,
       });
 
-      // addToast('Please fill all the fields', {
-      //   appearance: 'error',
-      //   autoDismiss: true,
-      // });
       error = true;
     }
-
-    // console.log(
-    //   password + "  " + confirmPassword,
-    //   password !== confirmPassword
-    // );
 
     if (password !== confirmPassword) {
       error = true;
@@ -48,13 +39,6 @@ const Signup = () => {
         // hideProgressBar: false, // Show the progress bar
         // pauseOnHover: true, // Pause the toast timer on hover,
       });
-
-      // addToast('Make sure password and confirm password matches', {
-      //   appearance: 'error',
-      //   autoDismiss: true,
-      // });
-
-      // error = true;
     }
 
     if (error) {
@@ -68,11 +52,6 @@ const Signup = () => {
       setSigningUp(false);
 
       return toast.success("User registered successfully, please login now");
-
-      // return addToast('User registered successfully, please login now', {
-      //   appearance: 'success',
-      //   autoDismiss: true,
-      // });
     } else {
       toast.error(response.message, {
         position: toast.POSITION.TOP_RIGHT,
@@ -80,34 +59,14 @@ const Signup = () => {
         // hideProgressBar: false, // Show the progress bar
         // pauseOnHover: true, // Pause the toast timer on hover,
       });
-
-      // addToast(response.message, {
-      //   appearance: 'error',
-      //   autoDismiss: true,
-      // });
     }
 
     setSigningUp(false);
   };
 
-  // if (auth.user) {
-  // return <Redirect to="/" />;
-  // return (
-  //   <Routes>
-  //     <Route to="/" />;
-  //   </Routes>
-  // );
-  //     <Routes>
-
-  //     <Route path="/" element={<Navigate replace to="/home" />} />
-  //   </Routes>
-  // );
-
-  //   return <Navigate replace to="/" />;
-  // }
-if(auth.user){
-  return <Navigate to="/"/>
-}
+  if (auth.user) {
+    return <Navigate to="/" />;
+  }
   return (
     <form className={styles.loginForm} onSubmit={handleFormSubmit}>
       <span className={styles.loginSignupHeader}> Signup</span>

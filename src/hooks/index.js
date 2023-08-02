@@ -42,7 +42,6 @@ export const useProvideAuth = () => {
   const updateUser = async (userId, name, password, confirmPassword) => {
     const response = await editProfile(userId, name, password, confirmPassword);
 
-    console.log("response", response);
     if (response.success) {
       setUser(response.data.user);
       setLocalItemInLocalStorage(
@@ -74,7 +73,6 @@ export const useProvideAuth = () => {
     }
   };
   const signup = async (name, email, password, confirm_password) => {
-    // console.log(name, email, password, confirm_password);
     const response = await register(name, email, password, confirm_password);
     if (response.success) {
       return {
@@ -101,11 +99,11 @@ export const useProvideAuth = () => {
 
       return;
     }
-    // console.log("user.friends :",user.friends)
+
     const newFriends = user.friends.filter(
       (f) => f.to_user._id !== friend.to_user._id
     );
-    // console.log("new friends :",newFriends)
+
     setUser({
       ...user,
       friends: newFriends,

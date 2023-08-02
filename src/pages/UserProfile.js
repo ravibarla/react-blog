@@ -5,18 +5,16 @@ import { toast } from "react-toastify";
 import { useParams, useNavigate } from "react-router-dom";
 import { addFriend, removeFriend, fetchUserProfile } from "../api";
 import Loader from "../component/Loader";
-// import { Toast } from "reactstrap";
+
 const UserProfile = () => {
-  // const user = useAuth();
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   const { userId } = useParams();
   const navigate = useNavigate();
   const auth = useAuth();
   const [requestInProgress, setRequestInProgress] = useState(false);
-  // console.log("user : ", user);
+
   useEffect(() => {
-    // console.log("auth.user : ", auth.user);
     const getUser = async () => {
       const response = await fetchUserProfile(userId);
 
@@ -38,8 +36,6 @@ const UserProfile = () => {
   if (loading) {
     <Loader />;
   }
-  // const user = {};
-  // console.log("user : ",user)
 
   const checkIfUserIsFreinds = () => {
     console.log("called : ");
@@ -83,7 +79,6 @@ const UserProfile = () => {
     setRequestInProgress(true);
     const response = await removeFriend(userId);
 
-    // console.log("userID : ", userId);
     if (response.success) {
       const friendship = auth.user.friends.filter(
         (friend) => friend.to_user._id === userId
@@ -106,7 +101,6 @@ const UserProfile = () => {
     }
 
     setRequestInProgress(false);
-    // window.location.reload()
   };
 
   return (

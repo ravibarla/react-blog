@@ -40,7 +40,7 @@ const Settings = () => {
       password,
       confirmPassword
     );
-    console.log("settings response ", response);
+
     if (response.succcess) {
       setEditMode(false);
       setSavingForm(false);

@@ -9,7 +9,7 @@ const CustomFetch = async (url, { body, ...customConfig }) => {
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }
-  //   console.log("token does not exist", token);
+
   const config = {
     ...customConfig,
     headers: { ...headers, ...customConfig.headers },
@@ -28,7 +28,6 @@ const CustomFetch = async (url, { body, ...customConfig }) => {
     }
     throw new Error(data.message);
   } catch (err) {
-    // console.error("error");
     return {
       message: err.message,
       success: false,
@@ -50,7 +49,6 @@ export const login = (email, password) => {
 };
 
 export const register = async (name, email, password, confirm_password) => {
-  // console.log("api  :  " + name, email, password, confirm_password);
   return CustomFetch(API_URLS.signUp(), {
     method: "POST",
     body: { name, email, password, confirm_password },
@@ -58,7 +56,6 @@ export const register = async (name, email, password, confirm_password) => {
 };
 
 export const editProfile = async (userId, name, password, confirmPassword) => {
-  // console.log("api  :  " + name, userId, password, confirm_password);
   return CustomFetch(API_URLS.editUser(), {
     method: "POST",
     body: { id: userId, name, password, confirm_password: confirmPassword },

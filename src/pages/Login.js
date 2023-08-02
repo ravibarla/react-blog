@@ -10,7 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loggingIn, setLoggingIn] = useState(false);
   const auth = useAuth();
-  // console.log(auth);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoggingIn(true);
@@ -25,14 +25,13 @@ const Login = () => {
     const response = await auth.login(email, password);
     if (response.success) {
       toast.success("successfully logged in");
-      // console.log("success")
     } else {
       toast.error(response.message);
     }
     setLoggingIn(false);
   };
-  if(auth.user){
-    return <Navigate to="/"/>
+  if (auth.user) {
+    return <Navigate to="/" />;
   }
   return (
     <form className={styles.loginForm} onSubmit={handleSubmit}>

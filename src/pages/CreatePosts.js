@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-// import { useToasts } from "react-toast-notifications";
+import { useState } from "react";
+
 import { toast } from "react-toastify";
 import styles from "../styles/home.module.css";
 import { addPost } from "../api";
@@ -8,12 +8,12 @@ import { usePosts } from "../hooks";
 const CreatePost = () => {
   const [post, setPost] = useState("");
   const [addingPost, setAddingPost] = useState(false);
-  // const { addToast } = useToasts();
+
   const posts = usePosts();
 
   const handleAddPostClick = async () => {
     setAddingPost(true);
-    // do some checks
+
     const response = await addPost(post);
 
     if (response.success) {
@@ -25,9 +25,6 @@ const CreatePost = () => {
         // hideProgressBar: false, // Show the progress bar
         // pauseOnHover: true, // Pause the toast timer on hover,
       });
-      // addToast("Post created successfully", {
-      //   appearance: "success",
-      // });
     } else {
       toast.error(response.message, {
         position: toast.POSITION.TOP_RIGHT,
@@ -35,9 +32,6 @@ const CreatePost = () => {
         // hideProgressBar: false, // Show the progress bar
         // pauseOnHover: true, // Pause the toast timer on hover,
       });
-      // addToast(response.message, {
-      //   appearance: "error",
-      // });
     }
     setAddingPost(false);
   };

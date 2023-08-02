@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-// import { useToasts } from "react-toast-notifications";
 
 import { createComment, toggleLike } from "../api";
 import { usePosts } from "../hooks";
@@ -13,7 +12,6 @@ const Post = ({ post }) => {
   const [comment, setComment] = useState("");
   const [creatingComment, setCreatingComment] = useState(false);
   const posts = usePosts();
-  //   const { addToast } = useToasts();
 
   const handleAddComment = async (e) => {
     if (e.key === "Enter") {
@@ -85,7 +83,6 @@ const Post = ({ post }) => {
             alt="user-pic"
           />
           <div>
-            {/* {console.log('post.user ',post.user)} */}
             <Link
               to={{
                 pathname: `/user/${post.user._id}`,

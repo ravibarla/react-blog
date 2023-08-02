@@ -20,9 +20,6 @@ const FriendsList = () => {
             <Link
               className={styles.friendsItem}
               to={`/user/${friend.to_user._id}`}
-              // to={{
-              //   pathname: `/user/${friend.to_user._id}`,
-              // }}
             >
               <div className={styles.friendsImg}>
                 <img

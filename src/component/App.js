@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react";
-import { getPosts } from "../api";
-// import { Home } from "../pages/Home";
 import Navbar from "./Navbar";
 import Loader from "./Loader";
 import "../styles/index.css";
-import { useAuth, usePosts } from "../hooks";
+import { useAuth } from "../hooks";
 import React from "react";
 
 import {
@@ -26,18 +23,7 @@ function PrivateRoute({ children }) {
 const App = () => {
   const auth = useAuth();
   console.log("auth : ", auth);
-  // const [posts, setPosts] = useState([]);
-  // const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     const response = await getPosts();
-  //     // console.log("response", response);
-  //     // setPosts(response.data.posts);
-  //     setLoading(false);
-  //   };
-  //   fetchPosts();
-  // }, []);
   if (auth.loading) {
     return <Loader />;
   }
