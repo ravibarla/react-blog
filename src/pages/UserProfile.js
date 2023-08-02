@@ -81,7 +81,7 @@ const UserProfile = () => {
       const friendship = auth.user.friends.filter(
         (friend) => friend.to_user._id === userId
       );
-
+      
       auth.updateUserFreind(false, friendship[0]);
       toast.success("friend removed successfully", {
         position: toast.POSITION.TOP_RIGHT,
