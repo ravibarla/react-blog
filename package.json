@@ -1,7 +1,7 @@
 {
   "name": "react-blog",
   "version": "0.1.0",
-  "homepage": "http://ravibarla.github.io/react-blog.git",
+  "homepage": "https://ravibarla.github.io/react-blog.git",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
