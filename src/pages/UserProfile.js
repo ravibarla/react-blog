@@ -38,10 +38,8 @@ const UserProfile = () => {
   }
 
   const checkIfUserIsFreinds = () => {
-    console.log("called : ");
-
     const friends = auth.user.friends;
-    console.log("auth friends : ", auth.user);
+
     const friendIds = friends.map((friend) => friend.to_user._id);
 
     const index = friendIds.indexOf(userId);
@@ -83,7 +81,7 @@ const UserProfile = () => {
       const friendship = auth.user.friends.filter(
         (friend) => friend.to_user._id === userId
       );
-      console.log("friendship :", friendship);
+
       auth.updateUserFreind(false, friendship[0]);
       toast.success("friend removed successfully", {
         position: toast.POSITION.TOP_RIGHT,

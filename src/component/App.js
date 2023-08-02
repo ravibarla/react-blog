@@ -22,7 +22,7 @@ function PrivateRoute({ children }) {
 }
 const App = () => {
   const auth = useAuth();
-  console.log("auth : ", auth);
+ 
 
   if (auth.loading) {
     return <Loader />;
