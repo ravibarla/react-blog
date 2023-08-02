@@ -73,3 +73,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### `livewebsite`
 
 https://ravibarla.github.io/react-blog/
+
+then click the 'codeal tab'
