@@ -74,4 +74,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 https://ravibarla.github.io/react-blog/
 
-then click the 'codeal tab'
+then click the 'codeal tab' to go to homepage
