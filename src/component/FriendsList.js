@@ -4,7 +4,7 @@ import styles from "../styles/home.module.css";
 
 const FriendsList = () => {
   const auth = useAuth();
-
+  console.log("auth from friends : ", auth.user);
   const { friends = [] } = auth.user;
   return (
     <div className={styles.friendsList}>
@@ -12,17 +12,17 @@ const FriendsList = () => {
       {friends && friends.length === 0 && (
         <div className={styles.noFriends}>No Friends Found!</div>
       )}
+
       {friends &&
         friends.map((friend) => (
           <div key={`friend-${friend._id}`}>
             {console.log("friends id :", friend)}
             <Link
               className={styles.friendsItem}
-              to={`/user/${friend._id}`}
+              to={`/user/${friend.to_user._id}`}
               // to={{
-              //   pathname: `/user/${friend._id}`,
+              //   pathname: `/user/${friend.to_user._id}`,
               // }}
-              
             >
               <div className={styles.friendsImg}>
                 <img
